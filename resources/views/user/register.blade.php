@@ -37,7 +37,7 @@
                     <h4 class="text-muted text-center m-t-0"><b>Sign Up</b></h4>
                     @include('user.partials.messages')
 
-                    <form class="form-horizontal m-t-20" action="index.html">
+                    <form class="form-horizontal m-t-20" action="#">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <div class="col-xs-12">
