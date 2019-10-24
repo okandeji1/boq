@@ -10,7 +10,7 @@
                     <div class="page-header-title">
                         <h4 class="pull-left page-title">Dashboard</h4>
                         <ol class="breadcrumb pull-right">
-                            <li><a href="#">Xadmino</a></li>
+                            <li><a href="#">Admin</a></li>
                             <li class="active">Dashboard</li>
                         </ol>
                         <div class="clearfix"></div>

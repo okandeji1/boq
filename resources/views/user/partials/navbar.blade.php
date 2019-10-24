@@ -2,8 +2,8 @@
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center">
-            <a href="index.html" class="logo"><img src="assets/images/logo_white_2.png" height="28"></a>
-            <a href="index.html" class="logo-sm"><img src="assets/images/logo_sm.png" height="36"></a>
+            <a href="#" class="logo">Bill Of Quality</a>
+            <a href="#" class="logo-sm">BOQ</a>
         </div>
     </div>
     <!-- Button mobile view to collapse sidebar menu -->
