@@ -1,10 +1,10 @@
 {
     "name": "okandeji/boq",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Inventory management system",
     "keywords": [
-        "framework",
-        "laravel"
+        "inventory",
+        "management"
     ],
     "license": "MIT",
     "require": {
