@@ -25,7 +25,7 @@ class UserController extends Controller
             $user = Auth::user();
             $user->createToken('boq')->accessToken;
             
-            return redirect('/');
+            return redirect('/dashboard');
         } else {
             return back()->with(['error' => ' Invalid email or password']);
         }
@@ -34,13 +34,14 @@ class UserController extends Controller
     public function register(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:50',
+            'firstname' => 'required|max:50',
+            'lastname' => 'required|max:50',
             'email' => 'required|email',
             'password' => 'required|min:6',
             'cpassword' => 'required|same:password',
         ]);
 
-        $data = $request->only(['name', 'email', 'password']);
+        $data = $request->only(['firstname', 'lastname', 'email', 'password']);
         $data['password'] = bcrypt($data['password']);
         
         // Check if user already exit
@@ -49,14 +50,15 @@ class UserController extends Controller
         }else {
             $user = new User();
             $user->uuid = Uuid::uuid4();
-            $user->name = $data['name'];
+            $user->firstname = $data['firstname'];
+            $user->lastname = $data['lastname'];
             $user->email = $data['email'];
             $user->password = $data['password'];
             $user->save();
             // Create access token
             $user->createToken('boq')->accessToken;
             // Redirect user
-            return redirect('/')->with('success', ' Registration successful! Please login');
+            return redirect('/')->with('success', ' Registration successful. Please login');
         }
     }
 
@@ -69,6 +71,6 @@ class UserController extends Controller
             $this->guard()->logout();
         }
         Auth::logout();
-        return Redirect('/login');
+        return Redirect('/');
     }
 }

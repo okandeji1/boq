@@ -19,6 +19,7 @@
                 <p class="text-muted m-0"><i class="fa fa-dot-circle-o text-success"></i> Online</p>
             </div>
         </div>
+        <div class="divider"></div>
         <!--- Divider -->
         <div id="sidebar-menu">
             <ul>
@@ -28,9 +29,9 @@
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-agenda"></i> <span> Products Management </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="#">Vendor</a></li>
-                        <li><a href="#">Product Category</a></li>
-                        <li><a href="#">Products &amp; Accordions</a></li>
+                        <li><a href="/product-vendor">Vendor</a></li>
+                        <li><a href="/product-category">Product Category</a></li>
+                        <li><a href="/product">Product</a></li>
                     </ul>
                 </li>
                 <li class="has_sub">

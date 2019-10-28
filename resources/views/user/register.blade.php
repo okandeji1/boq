@@ -32,31 +32,37 @@
 
                 <div class="panel-body">
                     <h3 class="text-center m-t-0 m-b-30">
-                        <span class=""><img src="/assets/images/logo_dark.png" alt="logo" height="32"></span>
+                        <span class="">Bill Of Quality</span>
                     </h3>
                     <h4 class="text-muted text-center m-t-0"><b>Sign Up</b></h4>
                     @include('user.partials.messages')
-
-                    <form class="form-horizontal m-t-20" action="#">
+                    <form class="form-horizontal m-t-20" action="/register" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input class="form-control" type="email" required="" placeholder="Email">
+                                <input class="form-control" name="firstname" type="text" required placeholder="First Name">
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input class="form-control" type="text" required="" placeholder="Username">
+                                <input class="form-control" name="lastname" type="text" required placeholder="Last Name">
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input class="form-control" type="password" required="" placeholder="Password">
+                                <input class="form-control" name="email" type="email" required parsley-type="email" placeholder="Email">
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input class="form-control" name="password" type="password" required id="pass2" placeholder="Password" data-parsley-minlength="6">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <input class="form-control" name="cpassword" type="password" required data-parsley-equalto="#pass2" placeholder=" Re-Type Password">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <div class="checkbox checkbox-primary">
@@ -68,19 +74,16 @@
 
                             </div>
                         </div>
-
                         <div class="form-group text-center m-t-20">
                             <div class="col-xs-12">
                                 <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Register</button>
                             </div>
                         </div>
-
                         <div class="form-group m-t-30 m-b-0">
                             <div class="col-sm-12 text-center">
                                 <a href="pages-login.html" class="text-muted">Already have account?</a>
                             </div>
                         </div>
-
                     </form>
                 </div>
 
@@ -101,8 +104,15 @@
         <script src="/assets/js/wow.min.js"></script>
         <script src="/assets/js/jquery.nicescroll.js"></script>
         <script src="/assets/js/jquery.scrollTo.min.js"></script>
-
+        <!-- Parsleyjs -->
+        <script type="text/javascript" src="assets/plugins/parsleyjs/parsley.min.js"></script>
         <script src="/assets/js/app.js"></script>
+
+        <script type="text/javascript">
+			$(document).ready(function() {
+				$('form').parsley();
+			});
+		</script>
 
     </body>
 </html>

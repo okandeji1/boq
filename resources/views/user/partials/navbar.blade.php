@@ -79,7 +79,7 @@
                             <li><a href="javascript:void(0)"><span class="badge badge-success pull-right">5</span> Settings </a></li>
                             <li><a href="javascript:void(0)"> Lock screen</a></li>
                             <li class="divider"></li>
-                            <li><a href="javascript:void(0)"> Logout</a></li>
+                            <li><a href="/logout"> Logout</a></li>
                         </ul>
                     </li>
                 </ul>
