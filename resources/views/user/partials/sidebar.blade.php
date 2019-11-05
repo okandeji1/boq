@@ -37,7 +37,7 @@
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-wand"></i> <span> Stock Management </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        <li><a href="#">Stock In</a></li>
+                        <li><a href="/stock-in">Stock In</a></li>
                         <li><a href="#">Stock Out</a></li>
                         <li><a href="#">Invoice</a></li>
                     </ul>
@@ -46,7 +46,7 @@
                     <a href="calendar.html" class="waves-effect"><i class="ti-calendar"></i><span> Reports <span class="badge badge-primary pull-right">NEW</span></span></a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i class="ti-ruler-pencil"></i><span> Customers <span class="badge badge-primary pull-right">6</span></span></a>
+                    <a href="/customer" class="waves-effect"><i class="ti-ruler-pencil"></i><span> Customers <span class="badge badge-primary pull-right">6</span></span></a>
                 </li>
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-wand"></i> <span> Settings </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>

@@ -35,3 +35,10 @@ Route::post('/product-vendor', 'VendorController@store');
 Route::get('/product-category', 'CategoryController@index');
 Route::post('/product-category', 'CategoryController@store');
 
+Route::get('/customer', 'CustomerController@index');
+Route::post('/customer', 'CustomerController@store');
+
+Route::get('/stock-in', 'StockController@index');
+Route::post('/stock-in', 'StockController@store');
+
+
