@@ -2,6 +2,7 @@
 @section('content')
 <!-- Start content -->
 <div class="content">
+        @include('user.partials.messages')
     <div class="container">
 
         <!-- Page-Title -->
@@ -35,47 +36,18 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                                <th>Age</th>
-                                                <th>City</th>
+                                                <th>name</th>
+                                                <th>Date</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($categories as $category)
                                             <tr>
-                                                <td>1</td>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>20</td>
-                                                <td>Cityname</td>
+                                                <td>{{$category->id}}</td>
+                                                <td>{{$category->name}}</td>
+                                                <td>{{$category->created_at}}</td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                                <td>20</td>
-                                                <td>Cityname</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                                <td>20</td>
-                                                <td>Cityname</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Steve</td>
-                                                <td>Mac Queen</td>
-                                                <td>@steve</td>
-                                                <td>20</td>
-                                                <td>Cityname</td>
-                                            </tr>
-
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

@@ -18,7 +18,7 @@ class ProductController extends Controller
     {
         // passing category & product to the view
         $categories = Category::all();
-        $products = Product::orderBy('created_at', 'desc');
+        $products = Product::orderBy('created_at', 'desc')->paginate(10);
         return view('product.product', compact(['products', $products, 'categories', $categories]));
     }
 

@@ -22,7 +22,7 @@ class StockController extends Controller
         $categories = Category::all();
         $products = Product::all();
         $vendors = Vendor::all();
-        $stocks = Stock::orderBy('created_at', 'desc');
+        $stocks = Stock::orderBy('created_at', 'desc')->paginate(10);
         return view('stock.stock_in', compact(['stocks', $stocks, 'categories', $categories, 'products', $products, 'vendors', $vendors]));
     }
 

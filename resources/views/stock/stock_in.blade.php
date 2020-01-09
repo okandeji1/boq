@@ -2,6 +2,7 @@
 @section('content')
 <!-- Start content -->
 <div class="content">
+        @include('user.partials.messages')
     <div class="container">
 
         <!-- Page-Title -->
@@ -35,47 +36,28 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
-                                                <th>Age</th>
-                                                <th>City</th>
+                                                <th>Category</th>
+                                                <th>Product</th>
+                                                <th>Vendor</th>
+                                                <th>Quantity</th>
+                                                <th>Cost Price</th>
+                                                <th>Selling Price</th>
+                                                <th>Date</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($stocks as $stock)
                                             <tr>
-                                                <td>1</td>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                                <td>20</td>
-                                                <td>Cityname</td>
+                                                <td>{{$stock->id}}</td>
+                                                <td>{{$stock->category->name}}</td>
+                                                <td>{{$stock->product->name}}</td>
+                                                <td>{{$stock->vendor->name}}</td>
+                                                <td>{{$stock->quantity}}</td>
+                                                <td>{{$stock->cost}}</td>
+                                                <td>{{$stock->selling}}</td>
+                                                <td>{{$stock->date}}</td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                                <td>20</td>
-                                                <td>Cityname</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                                <td>20</td>
-                                                <td>Cityname</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>Steve</td>
-                                                <td>Mac Queen</td>
-                                                <td>@steve</td>
-                                                <td>20</td>
-                                                <td>Cityname</td>
-                                            </tr>
-
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
