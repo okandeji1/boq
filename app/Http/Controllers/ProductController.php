@@ -6,6 +6,7 @@ use App\Product;
 use App\Category;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
+use Auth;
 
 class ProductController extends Controller
 {
@@ -19,6 +20,10 @@ class ProductController extends Controller
         // passing category & product to the view
         $categories = Category::all();
         $products = Product::orderBy('created_at', 'desc')->paginate(10);
+        if (Auth::guest()) {
+            //is a guest so redirect
+            return redirect('/');
+        }
         return view('product.product', compact(['products', $products, 'categories', $categories]));
     }
 

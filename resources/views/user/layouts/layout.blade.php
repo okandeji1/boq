@@ -14,7 +14,7 @@
         </script>
         <!-- Favicon --> 
 
-        <link rel="shortcut icon" href="/assets/images/favicon.ico">
+        <link rel="shortcut icon" href="/assets/images/logo.ico">
 
         <!-- DataTables -->
         <link href="/assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />

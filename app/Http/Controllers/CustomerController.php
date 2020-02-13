@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Customer;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
+use Auth;
 
 class CustomerController extends Controller
 {
@@ -16,6 +17,10 @@ class CustomerController extends Controller
     public function index()
     {
         $customers = Customer::orderBy('created_at', 'desc')->paginate(10);
+        if (Auth::guest()) {
+            //is a guest so redirect
+            return redirect('/');
+        }
         return view('customer.customer')->with('customers', $customers);
     }
 

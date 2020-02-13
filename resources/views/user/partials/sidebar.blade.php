@@ -2,7 +2,7 @@
     <div class="sidebar-inner slimscrollleft">
         <div class="user-details">
             <div class="text-center">
-                <img src="assets/images/users/avatar-1.jpg" alt="" class="img-circle">
+                <img src="assets/images/users/d1.png" alt="" class="img-circle">
             </div>
             <div class="user-info">
                 <div class="dropdown">
@@ -38,8 +38,9 @@
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-wand"></i> <span> Stock Management </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
                         <li><a href="/stock-in">Stock In</a></li>
+                        <li><a href="/make-order">Order</a></li>
                         <li><a href="#">Stock Out</a></li>
-                        <li><a href="#">Invoice</a></li>
+                        <li><a href="/invoice">Invoice</a></li>
                     </ul>
                 </li>
                 <li>

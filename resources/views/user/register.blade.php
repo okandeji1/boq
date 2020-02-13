@@ -14,7 +14,7 @@
         </script>
         <!-- Favicon --> 
 
-        <link rel="shortcut icon" href="/assets/images/favicon.ico">
+        <link rel="shortcut icon" href="/assets/images/logo.ico">
 
         <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="/assets/css/icons.css" rel="stylesheet" type="text/css">
@@ -81,7 +81,7 @@
                         </div>
                         <div class="form-group m-t-30 m-b-0">
                             <div class="col-sm-12 text-center">
-                                <a href="pages-login.html" class="text-muted">Already have account?</a>
+                                <a href="/" class="text-muted">Already have account?</a>
                             </div>
                         </div>
                     </form>

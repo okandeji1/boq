@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
+use Auth;
 
 class CategoryController extends Controller
 {
@@ -16,6 +17,10 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::orderBy('created_at', 'desc')->paginate(10);
+        if (Auth::guest()) {
+            //is a guest so redirect
+            return redirect('/');
+        }
         return view('product.category')->with('categories', $categories);
     
     }

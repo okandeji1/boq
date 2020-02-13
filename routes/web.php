@@ -23,6 +23,10 @@ Route::post('/login', 'UserController@login');
 Route::post('/register', 'UserController@register');
 Route::get('/logout', 'UserController@logout');
 Route::get('/dashboard', function () {
+    if (Auth::guest()) {
+        //is a guest so redirect
+        return redirect('/');
+    }
     return view('user/dashboard');
 });
 
@@ -40,5 +44,8 @@ Route::post('/customer', 'CustomerController@store');
 
 Route::get('/stock-in', 'StockController@index');
 Route::post('/stock-in', 'StockController@store');
+Route::get('/make-order', 'StockController@order');
+Route::get('/sp', 'StockController@getProduct');
+Route::get('/invoice', 'StockController@invoice');
 
 

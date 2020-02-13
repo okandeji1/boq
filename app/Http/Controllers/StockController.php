@@ -6,7 +6,10 @@ use App\Stock;
 use App\Category;
 use App\Product;
 use App\Vendor;
+use App\Customer;
+use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use Ramsey\Uuid\Uuid;
 
 class StockController extends Controller
@@ -16,6 +19,7 @@ class StockController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         // passing category, product & vendor to the view
@@ -23,8 +27,62 @@ class StockController extends Controller
         $products = Product::all();
         $vendors = Vendor::all();
         $stocks = Stock::orderBy('created_at', 'desc')->paginate(10);
+        if (Auth::guest()) {
+            //is a guest so redirect
+            return redirect('/');
+        }
         return view('stock.stock_in', compact(['stocks', $stocks, 'categories', $categories, 'products', $products, 'vendors', $vendors]));
     }
+
+    /**
+     * Generating Invoice
+     */
+
+     /**
+      * Order
+      */
+      public function order()
+      {
+          // passing category, product & vendor to the view
+        $categories = Category::all();
+        $products = Product::all();
+        $customers = Customer::all();
+        $stocks = Stock::orderBy('created_at', 'desc')->paginate(10);
+        if (Auth::guest()) {
+            //is a guest so redirect
+            return redirect('/');
+        }
+        return view('stock.order', compact(['stocks', $stocks, 'categories', $categories, 'products', $products, 'customers', $customers]));
+      }
+
+     public function invoice()
+     {
+        if (Auth::guest()) {
+            //is a guest so redirect
+            return redirect('/');
+        }
+        return view('stock.invoice');
+     }
+
+     /**
+      * get product
+      */
+      public function getProduct(Request $request)
+      {
+        $this -> validate($request, [
+            'product' => 'required',
+        ]);
+        $data = $request->input('product');
+        $selectedProduct = Product::where('name', '=', $data)->firstOrFail();
+        if (count($selectedProduct) > 0) {
+            return Response::json($selectedProduct);
+        } else {
+            return Response::json([
+                "status" => 404,
+                "message" => "No details found. Try to search again with different query"
+                ]);
+        }
+      }
 
     /**
      * Show the form for creating a new resource.
